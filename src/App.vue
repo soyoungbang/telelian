@@ -1,23 +1,21 @@
+<script>
+  import MainLayout from '@/components/MainLayout';
+
+  export default {
+    name: 'app',
+    components: { MainLayout },
+    data: () => {
+      return {};
+    },
+  };
+</script>
+
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <MainLayout></MainLayout>
   </div>
 </template>
 
-<script>
-export default {
-  name: 'App'
-}
-</script>
 
 <style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>

@@ -2,28 +2,32 @@
 
 module.exports = {
   root: true,
+  parser: 'babel-eslint',
   parserOptions: {
-    parser: 'babel-eslint'
+    sourceType: 'module'
   },
   env: {
     browser: true,
   },
-  extends: [
-    // https://github.com/vuejs/eslint-plugin-vue#priority-a-essential-error-prevention
-    // consider switching to `plugin:vue/strongly-recommended` or `plugin:vue/recommended` for stricter rules.
-    'plugin:vue/essential', 
-    // https://github.com/standard/standard/blob/master/docs/RULES-en.md
-    'standard'
-  ],
+  extends: 'airbnb-base',
   // required to lint *.vue files
   plugins: [
-    'vue'
+    'html'
   ],
-  // add your custom rules here
-  rules: {
-    // allow async-await
-    'generator-star-spacing': 'off',
+  'rules': {
+    'import/extensions': 0,
+    // allow optionalDependencies
+    'import/no-extraneous-dependencies': ['error', {
+      'optionalDependencies': ['test/unit/index.js']
+    }],
+    'no-param-reassign': ['error', { props: false } ],
     // allow debugger during development
-    'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
+    'no-debugger': process.env.NODE_ENV === 'production' ? 2 : 0,
+    'camelcase': 0,
+    'no-unused-vars': 1,
+    'no-use-before-define': 0,
+    'import/no-unresolved': 0,
+    'array-callback-return': 0,
+    'arrow-body-style': 0,
   }
 }
